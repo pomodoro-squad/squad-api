@@ -26,4 +26,5 @@ func (a *Application) InitConfiguration() {
 
 func (a *Application) InitFirebase() {
 	a.Firebase = firebase.NewFirebase(a.Configuration.FirebaseConfig)
+	a.Firebase.Auth()
 }

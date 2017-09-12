@@ -1,7 +1,7 @@
 package users
 
 import (
-	"github.com/toma-san/squad-api/config"
+	"github.com/tomo-san/squad-api/config"
 	"github.com/zabawaba99/firego"
 )
 
