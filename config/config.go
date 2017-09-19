@@ -14,6 +14,7 @@ type Configuration struct {
 
 type FirebaseConfig struct {
 	URl string
+	CredentialFile string
 }
 
 var (

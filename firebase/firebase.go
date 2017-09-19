@@ -1,11 +1,27 @@
 package firebase
 
 import (
+	"golang.org/x/net/context"
+
 	"github.com/toma-san/squad-api/config"
-	"github.com/zabawaba99/firego"
+	"google.golang.org/api/option"
+	"github.com/acoshift/go-firebase-admin"
 )
 
-func NewFirebase(c config.FirebaseConfig) *firego.Firebase{
-	f := firego.New("https://toma-san.firebaseio.com", nil)
-	return f
+func InitFirebase (c config.Configuration){
+	// Init App with service_account
+	option.WithCredentialsFile(c.FirebaseConfig.CredentialFile)
+
+	firApp, err := firebase.InitializeApp(context.Background(), firebase.AppOptions{
+		ProjectID:      "toma-san",
+	}, option.WithCredentialsFile(c.FirebaseConfig.CredentialFile))
+
+	if err != nil {
+		panic(err)
+	}
+
+	//fd := firApp.Database()
+	_ := firApp.Database()
+
+
 }
