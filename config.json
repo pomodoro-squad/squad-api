@@ -1,7 +1,7 @@
 {
   "ListenAddress": 1223,
   "Firebase": {
-    "URL": "https://toma-san.firebaseio.com/"
+    "URL": "https://toma-san.firebaseio.com/",
   "CredentialFile": "../toma-san-firebase-adminsdk-ogt0j-2b156ba741.json"
   }
 }

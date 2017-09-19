@@ -4,8 +4,8 @@ import (
 	"flag"
 
 	"github.com/toma-san/squad-api/config"
+	//"github.com/toma-san/squad-api/firebase"
 	"github.com/zabawaba99/firego"
-	"github.com/toma-san/squad-api/firebase"
 )
 
 type App interface {
@@ -25,6 +25,6 @@ func (a *Application) InitConfiguration() {
 }
 
 func (a *Application) InitFirebase() {
-	a.Firebase = firebase.NewFirebase(a.Configuration.FirebaseConfig)
-	a.Firebase.Auth()
+	a.Firebase = firego.New(a.Configuration.FirebaseConfig.URl, nil)
+	a.Firebase.Unauth()
 }
