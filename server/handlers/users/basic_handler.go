@@ -2,12 +2,12 @@ package users
 
 import (
 	"github.com/toma-san/squad-api/config"
-	"github.com/zabawaba99/firego"
+	"github.com/acoshift/go-firebase-admin"
 )
 
 type ApiV1Handler struct {
 	Configuration *config.Configuration
-	Firebase *firego.Firebase
+	Firebase *firebase.App
 }
 
 var (

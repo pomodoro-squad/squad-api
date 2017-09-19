@@ -4,8 +4,8 @@ import (
 	"flag"
 
 	"github.com/toma-san/squad-api/config"
-	"github.com/zabawaba99/firego"
-	"github.com/toma-san/squad-api/firebase"
+	f "github.com/toma-san/squad-api/firebase"
+	"github.com/acoshift/go-firebase-admin"
 )
 
 type App interface {
@@ -15,7 +15,7 @@ type App interface {
 
 type Application struct {
 	Configuration *config.Configuration
-	Firebase *firego.Firebase
+	Firebase *firebase.App
 }
 
 func (a *Application) InitConfiguration() {
@@ -25,6 +25,6 @@ func (a *Application) InitConfiguration() {
 }
 
 func (a *Application) InitFirebase() {
-	a.Firebase = firebase.NewFirebase(a.Configuration.FirebaseConfig)
+	a.Firebase = f.InitFire(a.Configuration)
 	a.Firebase.Auth()
 }

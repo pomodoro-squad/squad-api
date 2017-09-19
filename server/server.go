@@ -25,8 +25,8 @@ func StartServer(application a.Application){
 
 	user := v1.Group("/users")
 
-	user.GET("", userConfig.GetUserHandler)
-	user.GET("/:id", userConfig.GetAllUsersHandler)
+	user.GET("", userConfig.GetAllUsersHandler)
+	user.GET("/:id", userConfig.GetUserHandler)
 
 	server.Logger.Fatal(server.Start(fmt.Sprintf(":%d", application.Configuration.ListenAddress)))
 }
