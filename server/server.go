@@ -14,9 +14,13 @@ import (
 func StartServer(application a.Application){
 	server := echo.New()
 
+	userConfig := users.ApiV1Handler{
+		Configuration: application.Configuration,
+		Firebase: application.Firebase,
+	}
+
 	server.Use(middleware.Recover())
 
-	userConfig := users.ApiV1Handler{}
 
 	server.GET("/status", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, "Status ok")

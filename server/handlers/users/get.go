@@ -12,7 +12,7 @@ import (
 func (h ApiV1Handler) GetUserHandler(c echo.Context) error {
 	user := m.User{}
 
-	if err := h.Firebase.EqualTo(c.Param("id")).Value(&user); err != nil {
+	if err := h.Firebase.Child("users").Child(c.Param("id")).Value(&user); err != nil {
 		u.SendError(http.StatusInternalServerError, c, err, ErrInternalDatabase)
 	}
 	return c.JSON(http.StatusOK, user)

@@ -8,5 +8,6 @@ import (
 func main() {
 	app := application.Application{}
 	app.InitConfiguration()
+	app.InitFirebase()
 	server.StartServer(app)
 }
