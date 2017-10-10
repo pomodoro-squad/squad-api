@@ -1,0 +1,14 @@
+{
+  "users":{
+    "1":{
+      "first_name": "Ruslan",
+      "last_name": "Kirikami",
+      "timer_on": false
+    },
+    "2":{
+      "first_name": "Dima",
+      "last_name": "K",
+      "timer_on": false
+    }
+  }
+}

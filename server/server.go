@@ -9,6 +9,7 @@ import (
 
 	a "github.com/toma-san/squad-api/utils/application"
 	"github.com/toma-san/squad-api/server/handlers/users"
+	mw "github.com/toma-san/squad-api/middleware"
 )
 
 func StartServer(application a.Application){
@@ -19,6 +20,7 @@ func StartServer(application a.Application){
 		Firebase: application.Firebase,
 	}
 
+	server.Use(mw.Logger())
 	server.Use(middleware.Recover())
 
 

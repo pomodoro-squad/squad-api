@@ -7,14 +7,14 @@ import (
 )
 
 type Configuration struct {
-	ListenAddress  int
-	FirebaseConfig FirebaseConfig
-	SigningKey     string
+	ListenAddress  int `json:"listen_address"`
+	FirebaseConfig FirebaseConfig `json:"firebase"`
+	SigningKey     string	`json:"signing_key"`
 }
 
 type FirebaseConfig struct {
-	URl string
-	CredentialFile string
+	URl string	`json:"url"`
+	CredentialFile string	`json:"credential_file"`
 }
 
 var (
@@ -35,7 +35,6 @@ func NewConfig(configfile string) (*Configuration, error) {
 	if err != nil {
 		panic(err)
 	}
-
 	return &configuration, nil
 
 }

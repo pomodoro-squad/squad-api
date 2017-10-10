@@ -1,0 +1,7 @@
+{
+  "listen_address": 1223,
+  "firebase": {
+    "url": "https://toma-san.firebaseio.com/",
+  "credential_file": "../../toma-san-firebase-adminsdk-ogt0j-2b156ba741.json"
+  }
+}
