@@ -1,9 +1,9 @@
 package main
 
 import (
+	"flag"
 	"github.com/toma-san/squad-api/server"
 	"github.com/toma-san/squad-api/utils/application"
-	"flag"
 )
 
 func main() {
