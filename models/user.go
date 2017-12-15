@@ -16,28 +16,15 @@ type User struct {
 	Age            int      `json:"age"`
 	Email          string   `json:"email"`
 	EmailVerified  bool     `json:"email_verified"`
-	PasswordHash   string   `json:"-"`
-	PasswordSalt   string   `json:"-"`
-	Password       string   `json:"password"`
-	ResetPassword  string   `json:"reset_password"`
-	Communities    []string `json:"communities"`
-	UserConnection []int64  `json:"user_connection"`
-	Busy           bool     `json:"busy"`
-	Following      *int64   `json:"following"`
+	Groups    []string `json:"communities"`
 	Referral       *int64   `json:"referral"`
-	FollowedBy     *[]int64 `json:"followed_by"`
-	TeamId         *[]int64
-	Admin          bool
-	InTeam         bool
 }
 
 type Iteration struct {
-	LastTimeOn           time.Time `json:"last_time_on"`
-	LastTimeOFf          time.Time `json:"last_time_off"`
-	CompleteIterations   int64     `json:"complete_iterations"`
-	IncompleteIterations int64     `json:"incomplete_iterations"`
+	SBasicModel
+	UserID
+	Duration
+	Completed bool
 }
 
-type UserList struct {
-	Users []User
-}
+
